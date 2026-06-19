@@ -3,8 +3,8 @@
 A full-stack Notice Board application built for the Reno Platforms Web Development Internship Assignment.
 
 ## Live Demo
-**Vercel URL:** [Deploy to Vercel and add link here]
-**GitHub Repository:** [Add repo link here]
+**Vercel URL:** notice-board-weld.vercel.app
+**GitHub Repository:** 
 
 ## Features Built
 - **Full CRUD**: Create, Read, Update, and Delete notices.
