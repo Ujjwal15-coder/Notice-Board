@@ -1,0 +1,37 @@
+// prisma/schema.prisma
+// Notice Board — Database Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Category {
+  Exam
+  Event
+  General
+}
+
+// Urgent defined FIRST so Prisma enum index ordering puts it before Normal
+enum Priority {
+  Urgent
+  Normal
+}
+
+model Notice {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(200)
+  body        String   @db.Text
+  category    Category @default(General)
+  priority    Priority @default(Normal)
+  publishDate DateTime
+  image       String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([priority, publishDate])
+}
