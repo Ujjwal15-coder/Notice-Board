@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-slate-900);
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-slate-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-700);
+}
+
+/* Date input calendar icon override for dark theme */
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0.6;
+}
+::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
